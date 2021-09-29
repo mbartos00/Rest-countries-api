@@ -1,0 +1,20 @@
+@import "./components/variables";
+@import "./components/global";
+@import "./components/header";
+@import "./components/nav";
+@import "./components/card";
+@import "./components/loader";
+
+body {
+  font-size: $Homepage-fontsize;
+  background: $Very-dark-blue;
+  color: $White;
+  height: 100vh;
+}
+
+.main {
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}

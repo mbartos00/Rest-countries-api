@@ -1,0 +1,116 @@
+@import "style.scss";
+
+.nav {
+  height: 8rem;
+  //   position: relative;
+  &__btn {
+    background: $Dark-blue;
+    border: none;
+    border-radius: 2px;
+    box-shadow: $Homepage-shadow;
+    padding: 0.5rem 1.5rem;
+    display: inherit;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    align-items: center;
+    cursor: pointer;
+    color: $White;
+    @include transitionAll(0.1s);
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+    }
+    &--icon {
+      margin-right: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+}
+.main {
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 50vh;
+
+  &__name {
+    margin: 1rem 0;
+  }
+  &__info--first {
+    margin-bottom: 1rem;
+
+    &-p {
+      margin-bottom: 0.5rem;
+      .semibold {
+        font-weight: $Semi-bold;
+      }
+    }
+  }
+  &__info--second {
+    margin-bottom: 1rem;
+    &-p {
+      margin-bottom: 0.5rem;
+      .semibold {
+        font-weight: $Semi-bold;
+      }
+    }
+  }
+  &__btns {
+    margin-top: 2rem;
+    &-btn {
+      background: $Dark-blue;
+      border: none;
+      border-radius: 2px;
+      box-shadow: $Homepage-shadow;
+      padding: 0.3rem 1.7rem;
+      cursor: pointer;
+      margin: 1rem 0.6rem 1rem 0;
+      color: inherit;
+      @include transitionAll(0.1s);
+      &:hover,
+      &:focus {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+@media screen and (min-width: #{$medium}) {
+  .nav {
+    justify-content: center;
+    &__btn {
+      left: 5%;
+    }
+  }
+  .main {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 1fr 7fr 9fr 4fr;
+    grid-template-rows: 0.2fr 0.7fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    &__flag {
+      grid-area: 2 / 2 / 3 / 2;
+    }
+    &__name {
+      grid-area: 2 / 3 / 3 / 3;
+      margin-left: 5rem;
+    }
+    &__info--first {
+      grid-area: 2 / 3 / 3 / 3;
+      transform: translateY(20%);
+      margin-left: 5rem;
+      margin-top: 1rem;
+    }
+    &__info--second {
+      grid-area: 2 / 4 / 3 / 4;
+
+      transform: translateX(-40%) translateY(20%);
+    }
+    &__btns {
+      grid-area: 3 / 3 / 1 / 3;
+      transform: translateY(75%);
+      display: inline-block;
+      margin-left: 5rem;
+    }
+  }
+}

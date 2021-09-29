@@ -1,0 +1,25 @@
+//colors
+$Dark-blue: hsl(209, 23%, 22%); // dark mode element;
+$Very-dark-blue: hsl(207, 26%, 17%); // dark mode backround
+$Dark-blue-text: hsl(200, 15%, 8%); // light mode text
+$Light-gray: hsl(0, 0%, 98%); // light mode background
+$White: hsl(0, 0%, 100%); // dark mode text and light mode elements
+$Homepage-shadow: 0 5px 5px darken($Very-dark-blue, 2%); //box shadow
+
+//Typography
+$Homepage-fontsize: 0.875rem;
+
+$Font-family: "Nunito Sans", sans-serif;
+$Light: 300;
+$Semi-bold: 600;
+$Extra-bold: 800;
+
+//mixins
+@mixin transitionAll($time) {
+  transition: all $time ease-in-out;
+}
+
+//breakpoints
+$small: 375px;
+$medium: 1024px;
+$large: 1440px;
