@@ -30,9 +30,9 @@ const createCard = (country) => {
   const cardTemplate = `
   <div class="main__cards--card">
   <a href = "./app/html/countryDetails.html?${country.alpha3Code}">
-      <div class="card__flag"><img src="${country.flag}" alt = "${
-    country.name
-  } flag"></div>
+      <div class="card__flag" style="background-image:url(${
+        country.flag
+      })"></div>
       <div class="card__info">
       <h3 class="card__info--name">${country.name}</h3>
       <p class="card__info--text">

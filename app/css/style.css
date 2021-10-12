@@ -230,6 +230,8 @@ a {
 .main__cards--card .card__flag {
   height: 50%;
   width: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .main__cards--card .card__flag img {
