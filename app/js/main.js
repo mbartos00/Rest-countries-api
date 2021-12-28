@@ -50,7 +50,7 @@ const createCard = (country) => {
       </div>
       </a>
       </div>`;
-  //append cards to it parent
+  //append cards to parent
   cardContainer.insertAdjacentHTML("beforeend", cardTemplate);
 };
 
