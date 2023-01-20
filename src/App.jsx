@@ -25,12 +25,16 @@ const App = () => {
     return storedTheme ? JSON.parse(storedTheme) : { mode: 'light' };
   }
 
+  const handleSetTheme = passedTheme => {
+    setTheme(passedTheme === 'dark' ? { mode: 'light' } : { mode: 'dark' });
+  };
+
   const router = createBrowserRouter([
     {
       path: '/',
       elements: <Root />,
       children: [
-        { index: true, element: <Home /> },
+        { index: true, element: <Home setTheme={handleSetTheme} /> },
         {
           path: '/country/:id',
           element: <CountryDetails />,
