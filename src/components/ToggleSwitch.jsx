@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useEffect, useState } from 'react';
+import styled, { useTheme } from 'styled-components';
 
 const StyledSwitch = styled.div`
   position: relative;
@@ -84,18 +85,30 @@ const StyledSwitch = styled.div`
   }
 `;
 
-const ToggleSwitch = ({ name, checked, onChange }) => {
-  const handleChange = e => {
-    onChange(e.target.checked);
+const ToggleSwitch = ({ name, setTheme }) => {
+  const [storedTheme, setStoredTheme] = useState();
+  const [checked, setChecked] = useState(false);
+  const theme = useTheme();
+
+  const handleChange = () => {
+    setTheme(storedTheme);
   };
+  useEffect(() => {
+    setStoredTheme(theme.mode);
+    if (storedTheme === 'light') {
+      setChecked(true);
+    } else {
+      setChecked(false);
+    }
+  }, [storedTheme]);
   return (
     <StyledSwitch>
       <input
         type='checkbox'
         name={name}
         className='checkbox'
-        id={name}
         checked={checked}
+        id={name}
         onChange={handleChange}
       />
 

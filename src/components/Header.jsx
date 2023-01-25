@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import ToggleSwitch from './ToggleSwitch';
 
 const StyledHeader = styled.header`
+  background-color: ${({ theme }) =>
+    theme.mode === 'dark' ? '#2b3945' : '#fff'};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,20 +22,12 @@ const StyledHeader = styled.header`
 `;
 
 const Header = ({ setTheme }) => {
-  const [isDark, setIsDark] = useState(false);
-  const theme = useTheme();
-
-  const onThemeChange = checked => {
-    setIsDark(checked);
-    setTheme(theme.mode);
-  };
   return (
     <StyledHeader>
       <h3>Where in the world?</h3>
       <ToggleSwitch
         name='darkmode'
-        checked={isDark}
-        onChange={onThemeChange}
+        setTheme={setTheme}
       />
     </StyledHeader>
   );

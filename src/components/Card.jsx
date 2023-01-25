@@ -12,28 +12,19 @@ const StyledCard = styled.div`
 `;
 
 const Card = ({ data }) => {
-  console.log(data);
   return (
     <StyledCard>
-      <CardItem
-        key={data[0].numericCode}
-        id={data[0].alpha3Code}
-        name={data[0].name}
-        population={data[0].population}
-        region={data[0].region}
-        capital={data[0].capital}
-        flagImage={data[0].flag}
-      />
-      {/* {data.map(country => (
+      {data.map(country => (
         <CardItem
           key={country.numericCode}
+          id={country.alpha3Code}
           name={country.name}
           population={country.population}
           region={country.region}
           capital={country.capital}
           flagImage={country.flag}
         />
-      ))} */}
+      ))}
     </StyledCard>
   );
 };

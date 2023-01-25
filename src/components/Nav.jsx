@@ -7,21 +7,20 @@ const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 13rem;
   position: relative;
+  justify-content: center;
   @media screen and (min-width: 1024px) {
     justify-content: space-between;
-    flex-wrap: wrap;
   }
 `;
 
-const Nav = () => {
+const Nav = ({ onRegionChange, onSearchCountry }) => {
   return (
     <StyledNav>
-      <SearchBar />
-      <RegionFilter />
+      <SearchBar onSearchCountry={inputValue => onSearchCountry(inputValue)} />
+      <RegionFilter onRegionChange={region => onRegionChange(region)} />
     </StyledNav>
   );
 };

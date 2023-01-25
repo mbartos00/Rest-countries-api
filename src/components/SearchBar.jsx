@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import useDebounce from '../hooks/useDebounce';
+
 const StyledSearchBar = styled.div`
   background: ${({ theme }) => (theme.mode === 'dark' ? '#2b3945' : '#fff')};
   position: absolute;
   top: 10%;
-  display: inherit;
+  display: flex;
   justify-content: center;
   width: 80%;
   height: 3rem;
@@ -33,13 +35,25 @@ const StyledSearchBar = styled.div`
   }
 `;
 
-const SearchBar = () => {
+const SearchBar = ({ onSearchCountry }) => {
+  const [value, setValue] = useState('');
+
+  const handleChange = e => {
+    const loweredText = e.target.value.toLowerCase();
+    setValue(loweredText);
+  };
+
+  useEffect(() => {
+    onSearchCountry(value);
+  }, [value]);
   return (
     <StyledSearchBar>
       <input
         type='search'
         placeholder='Search for a country...'
         aria-label='Searchbar'
+        onChange={handleChange}
+        value={value}
       />
     </StyledSearchBar>
   );

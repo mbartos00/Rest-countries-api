@@ -31,12 +31,17 @@ const StyledFilter = styled.div`
   }
 `;
 
-const RegionFilter = () => {
+const RegionFilter = ({ onRegionChange }) => {
+  const handleChange = e => {
+    onRegionChange(e.target.value);
+  };
+
   return (
     <StyledFilter>
       <select
         name='Region'
         id='regionFilter'
+        onChange={handleChange}
       >
         <option value=''>Filter by Region</option>
         <option value='Asia'>Asia</option>

@@ -35,14 +35,6 @@ const StyledLink = styled(Link)`
   height: 20rem;
 `;
 
-const StyledFlag = styled.div`
-  height: 50%;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: url(${props => props.image});
-`;
-
 const StyledInformations = styled.div`
   height: 50%;
   background: ${({ theme }) => (theme.mode === 'dark' ? '#2b3945' : '#fff')};
@@ -65,6 +57,16 @@ const StyledBoldText = styled.span`
 `;
 const StyledText = styled.p`
   font-weight: 300;
+`;
+const StyledFlag = styled.div.attrs(({ image }) => ({
+  style: {
+    backgroundImage: `url(${image})`,
+  },
+}))`
+  height: 50%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
 `;
 const CardItem = ({ name, population, region, capital, flagImage, id }) => {
   return (

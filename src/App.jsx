@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import CountryDetails from './pages/CountryDetails';
+import { cardsLoader } from './components/Cards';
+import Error from './components/Error';
+import CountryDetails, { countryInfoLoader } from './pages/CountryDetails';
 import Home from './pages/Home';
 import Root from './pages/Root';
 const GlobalStyle = createGlobalStyle`
@@ -33,11 +35,17 @@ const App = () => {
     {
       path: '/',
       elements: <Root />,
+      errorElement: <Error />,
       children: [
-        { index: true, element: <Home setTheme={handleSetTheme} /> },
+        {
+          index: true,
+          element: <Home setTheme={handleSetTheme} />,
+          loader: cardsLoader,
+        },
         {
           path: '/country/:id',
-          element: <CountryDetails />,
+          element: <CountryDetails setTheme={handleSetTheme} />,
+          loader: countryInfoLoader,
         },
       ],
     },
