@@ -2,64 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
-      rel="stylesheet"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
     />
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
-
-    <link rel="stylesheet" href="./app/css/style.min.css" />
-    <title>REST countries API</title>
+    <link
+      rel="icon"
+      href="favicon.png"
+      type="image/x-icon"
+    />
+    <title>Rest Countries Api</title>
   </head>
   <body>
-    <header class="header">
-      <h3 class="header__title">Where in the world?</h3>
-    </header>
-    <nav class="nav">
-      <div class="nav__searchbar">
-        <ion-icon
-          name="search-circle-outline"
-          class="nav__searchbar--icon"
-        ></ion-icon>
-        <input
-          type="search"
-          placeholder="Search for a country..."
-          aria-label="Searchbar"
-          class="nav__searchbar--input"
-        />
-      </div>
-      <div class="nav__filter">
-        <select class="nav__filter--select" name="Region" id="regionFilter">
-          <option class="select__option" value="">Filter by Region</option>
-          <option class="select__option" value="Asia">Asia</option>
-          <option class="select__option" value="Europe">Europe</option>
-          <option class="select__option" value="Africa">Africa</option>
-          <option class="select__option" value="Oceania">Oceania</option>
-          <option class="select__option" value="Americas">America</option>
-        </select>
-      </div>
-    </nav>
-    <main class="main">
-      <div class="main__loader">
-        <div class="main__loader--circle1"></div>
-        <div class="main__loader--circle2"></div>
-        <div class="main__loader--circle3"></div>
-        <div class="main__loader--circle4"></div>
-      </div>
-      <div class="main__cards"></div>
-    </main>
+    <div id="root"></div>
     <script
       type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      src="/src/main.jsx"
     ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="./app/js/main.js"></script>
   </body>
 </html>
