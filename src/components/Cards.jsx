@@ -3,7 +3,7 @@ import { Await, defer, json, useLoaderData } from 'react-router-dom';
 import Card from './Card';
 import Loader from './Loader';
 
-export const BASE_URL = 'https://restcountries.com/';
+export const BASE_URL = 'https://restcountries.com';
 
 const Cards = ({ region, searchedCountry }) => {
   const [filteredData, setFilteredData] = useState();
